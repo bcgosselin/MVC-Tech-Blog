@@ -9,6 +9,8 @@ https://www.npmjs.com/package/express-session
 
 https://www.npmjs.com/package/connect-session-sequelize
 
+https://www.npmjs.com/package/mysql2
+
 https://www.npmjs.com/package/jest
 
 GIVEN a CMS-style blog site
