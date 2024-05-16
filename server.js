@@ -12,10 +12,17 @@ const app = express();
 
 const PORT = process.env.PORT || 3002;
 
+// Define Handlebars engine
+const hbs = exphbs.create({ /* Add your Handlebars configuration here if needed */ });
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    maxAge: 60 * 60 * 1000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict'
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -25,8 +32,9 @@ const sess = {
 
 app.use(session(sess));
 
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+// Use Handlebars engine for rendering views
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -35,6 +43,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening on http://localhost:3002/'));
+  app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}/`));
 });
-
