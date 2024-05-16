@@ -14,21 +14,21 @@
                         <!-- home dashboard and logout button -->
                         <div class="navbar-item is-active column is-justify-content-center">
                             <div class="field has-addons is-marginless">
-                                    <a class="control" role="navigation"  href="/home">
+                                    <a class="control" role="navigation"  href="/">
                                         <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Home</span></button>        
                                     </a>
                                     <p class="control" role="navigation"  href="/dashboard">
                                         <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Dashboard</span></button>        
                                     </p>
-                                {{#if logged_in}}
-                                    <p class="control" role="navigation"  href="/">
+                                {{!-- {{#if logged_in}} --}}
+                                    <p class="control" role="navigation"  href="/login">
                                         <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold">Logout</button>
                                     </p>
-                                {{#else}}
+                                {{!-- {{#else}}
                                     <p class="control" role="navigation"  href="/login">
                                         <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold">Login</button>
                                     </p>
-                                {{/if}}
+                                {{/if}} --}}
                             </div>
                                 <!-- Header/Title -->
                             <div class="column is-4">
@@ -39,5 +39,8 @@
                 </div>
             </header>
         </section>
+
+        {{{body}}}
+
     </body>
 </html>

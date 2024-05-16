@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3002;
 
 // Define Handlebars engine
-const hbs = exphbs.create({ /* Add your Handlebars configuration here if needed */ });
+const hbs = exphbs.create({});
 
 const sess = {
   secret: 'Super secret secret',
