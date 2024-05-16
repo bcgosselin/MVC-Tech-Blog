@@ -1,5 +1,4 @@
-// Import necessary modules and dependencies
-
+// Import
 const request = require('supertest');
 const app = require('../server');
 const { User } = require('../models');

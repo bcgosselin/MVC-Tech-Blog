@@ -1,7 +1,9 @@
+// Import necessary modules
 const sequelize = require('./config/connection');
 const bcrypt = require('bcrypt');
-const { User } = require('./models');
+const { User } = require('./models/User');
 
+// Define user data
 const userData = [
   {
     username: 'test1',
@@ -21,16 +23,24 @@ const userData = [
   }
 ];
 
+// Define a function to seed the database
 const seedDatabase = async () => {
+  try {
+    // Sync the Sequelize model with the database
+    await sequelize.sync({ force: true });
 
-  await sequelize.sync({ force: true });
+    // Insert userData into the User table
+    await User.bulkCreate(userData);
 
-  await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+    console.log('Database seeded successfully.');
 
-  process.exit(0);
+    // Exit the process
+    process.exit(0);
+  } catch (error) {
+    console.error('Error seeding database:', error);
+    process.exit(1);
+  }
 };
 
+// Call the seedDatabase function
 seedDatabase();
