@@ -20,14 +20,15 @@
                                     <a class="control" role="navigation"  href="/dashboard">
                                         <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Dashboard</span></button>        
                                     </a>
-                                {{!-- {{#if logged_in}} --}}
+                                {{!-- {{#if logged_out}} --}}
                                     <a class="control" role="navigation"  href="/login">
                                         <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold">Login</button>
                                     </a>
-                                {{!-- {{#else}}
+                                {{!-- {{#else}} --}}
                                     <p class="control" role="navigation"  href="/login">
-                                        <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold">Login</button>
+                                        <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold" id="logout">Logout</button>
                                     </p>
+                                {{!-- {{/else}}
                                 {{/if}} --}}
                             </div>
                                 <!-- Header/Title -->
@@ -43,4 +44,6 @@
         {{{body}}}
 
     </body>
+
+{{!-- <script src="/js/login.js"></script> --}}
 </html>

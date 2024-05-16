@@ -23,7 +23,7 @@ const userData = [
   }
 ];
 
-// Define a function to seed the database
+// function to seed the database
 const seedDatabase = async () => {
   try {
     // Sync the Sequelize model with the database
