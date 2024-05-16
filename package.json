@@ -4,7 +4,7 @@
   "description": "CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts.  The app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles"
+    "test": "jest --config=test/jest.config.js --detectOpenHandles"
   },
   "author": "Robert Gosselin",
   "license": "MIT",
@@ -12,8 +12,12 @@
     "bcrypt": "^5.1.1",
     "connect-session-sequelize": "^7.1.7",
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
     "express-session": "^1.18.0",
     "jest": "^29.7.0",
-    "mysql2": "^3.9.7"
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3",
+    "supertest": "^7.0.0"
   }
 }

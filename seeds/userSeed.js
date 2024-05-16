@@ -1,7 +1,8 @@
-const User = require('../models/user');
-const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
 
-const user_data = [
+const { User } = require('../models');
+
+const userData = [
   {
     username: 'test1',
     password: bcrypt.hashSync('password11', 10)
@@ -20,12 +21,16 @@ const user_data = [
   }
 ];
 
-const seedUser = async () => {
-  try {
-    await User.bulkCreate(user_data);
-  } catch (error) {
-    console.error('Error seeding users:', error);
-  }
+const seedDatabase = async () => {
+
+  await sequelize.sync({ force: true });
+
+  await User.bulkCreate(userData, {
+    individualHooks: true, 
+    returning: true, 
+  });
+
+  process.exit(0);
 };
 
-module.exports = seedUser;
+seedDatabase();
