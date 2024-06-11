@@ -1,7 +1,7 @@
 // Import the User, Post, and Comment models
-const User = require('./User');
+const User = require('./user');
 const Post = require('./Post');
-const Comment = require('./Comment');
+const Comment = require('./comment');
 // updated model names to be Uppercase
 
 
