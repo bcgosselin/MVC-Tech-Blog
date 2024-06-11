@@ -1,7 +1,8 @@
 // Import the User, Post, and Comment models
-const User = require('./user');
+const User = require('./User');
 const Post = require('./Post');
-const Comment = require('./comment');
+const Comment = require('./Comment');
+// updated model names to be Uppercase
 
 
 User.hasMany(Post, {
