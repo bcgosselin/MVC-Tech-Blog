@@ -1,17 +1,21 @@
-<form class="login-form">
-<section class="section container">
-    <div class="field">
-        <input class="input" type="text" placeholder="username" id="username-login"/>
-    </div>
-    
-    <div class="field">
-        <input class="input" type="password" placeholder="Password" id="password-login"/>
-    </div>
+<form class="login-form" action="/login" method="POST">
+    <section class="section container">
+        <div class="field">
+            <input class="input" type="text" placeholder="Username" name="username" id="username-login"/>
+        </div>
+        
+        <div class="field">
+            <input class="input" type="password" placeholder="Password" name="password" id="password-login"/>
+        </div>
 
-    <div class="">
-        <button class="button has-background-grey-dark has-text-danger has-text-weight-bold" type="submit">Login</button>
-    </div>
-</section>
+        {{#if errorMessage}}
+            <p class="has-text-danger">{{errorMessage}}</p>
+        {{/if}}
+
+        <div class="field">
+            <button class="button has-background-grey-dark has-text-danger has-text-weight-bold" type="submit">Login</button>
+        </div>
+    </section>
 </form>
 
 <script src="/js/login.js"></script>

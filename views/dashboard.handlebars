@@ -1,0 +1,50 @@
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Welcome to Your Dashboard</h1>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-thirds">
+                    <h2 class="subtitle">Your Posts</h2>
+                    {{#if posts}}
+                        <ul>
+                            {{#each posts}}
+                                <li>
+                                    {{> comment}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{else}}
+                        <p>No posts to display.</p>
+                    {{/if}}
+                </div>
+                <div class="column">
+                    <h2 class="subtitle">Create a New Post</h2>
+                    <form action="/new" method="POST">
+                        <div class="field">
+                            <label class="label">Title</label>
+                            <div class="control">
+                                <input class="input" type="text" name="title" placeholder="Enter title" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Content</label>
+                            <div class="control">
+                                <textarea class="textarea" name="content" placeholder="Enter content" required></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" type="submit">Create Post</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>tech blog</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    </head>
-    <body>
-        <section class="section">
-            <header class="navbar" role="navigation" aria-label="main navigation">
-                <div class="hero-body">
-                    <nav class="columns level">
-                        <!-- home dashboard and logout button -->
-                        <div class="navbar-item is-active column is-justify-content-center">
-                            <div class="field has-addons is-marginless">
-                                    <a class="control" role="navigation"  href="/">
-                                        <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Home</span></button>        
-                                    </a>
-                                    <a class="control" role="navigation"  href="/dashboard">
-                                        <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Dashboard</span></button>        
-                                    </a>
-                                {{!-- {{#if logged_out}} --}}
-                                    <a class="control" role="navigation"  href="/login">
-                                        <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold">Login</button>
-                                    </a>
-                                {{!-- {{#else}} --}}
-                                    <p class="control" role="navigation"  href="/login">
-                                        <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold" id="logout">Logout</button>
-                                    </p>
-                                {{!-- {{/else}}
-                                {{/if}} --}}
-                            </div>
-                                <!-- Header/Title -->
-                            <div class="column is-4">
-                                <h1 class="title is-size-1 has-text-light has-text-weight-bold">The Tech Blog</h1>
-                            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <header class="navbar" role="navigation" aria-label="main navigation">
+            <div class="hero-body">
+                <nav class="columns level">
+                    <!-- Home, Dashboard, and Login/Logout Button -->
+                    <div class="navbar-item is-active column is-justify-content-center">
+                        <div class="field has-addons is-marginless">
+                            <a class="control" role="navigation" href="/">
+                                <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Home</span></button>
+                            </a>
+                            <a class="control" role="navigation" href="/dashboard">
+                                <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Dashboard</span></button>
+                            </a>
+                            {{#if logged_in}}
+                                <a class="control" role="navigation" href="/logout">
+                                    <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Logout</span></button>
+                                </a>
+                            {{else}}
+                                <a class="control" role="navigation" href="/login">
+                                    <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Login</span></button>
+                                </a>
+                                <a class="control" role="navigation" href="/signup">
+                                    <button class="button is-rounded has-background-grey-dark has-text-danger has-text-weight-bold"><span>Sign Up</span></button>
+                                </a>
+                            {{/if}}
                         </div>
-                    </nav>
-                </div>
-            </header>
-        </section>
+                        <!-- Header/Title -->
+                        <div class="column is-4">
+                            <h1 class="title is-size-1 has-text-light has-text-weight-bold">The Tech Blog</h1>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </section>
 
-        {{{body}}}
+    {{{body}}}
 
-    </body>
-
-{{!-- <script src="/js/login.js"></script> --}}
+</body>
 </html>

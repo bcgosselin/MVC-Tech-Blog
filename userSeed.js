@@ -1,7 +1,7 @@
 // Import necessary modules
 const sequelize = require('./config/connection');
 const bcrypt = require('bcrypt');
-const { User } = require('./models/User');
+const { User } = require('./models');
 
 // Define user data
 const userData = [
@@ -23,7 +23,7 @@ const userData = [
   }
 ];
 
-// function to seed the database
+// Function to seed the database
 const seedDatabase = async () => {
   try {
     // Sync the Sequelize model with the database
@@ -44,3 +44,4 @@ const seedDatabase = async () => {
 
 // Call the seedDatabase function
 seedDatabase();
+
