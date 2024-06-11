@@ -1,29 +1,32 @@
+// Import the User, Post, and Comment models
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
+
 User.hasMany(Post, {
-  foreignKey: 'userId',
+  foreignKey: 'userId', // Define foreign key in the Post model referencing the User model
 });
 
 Post.belongsTo(User, {
-  foreignKey: 'userId',
+  foreignKey: 'userId', // Define foreign key in the Post model referencing the User model
 });
 
 Comment.belongsTo(User, {
-  foreignKey: 'userId',
+  foreignKey: 'userId', // Define foreign key in the Comment model referencing the User model
 });
 
 Comment.belongsTo(Post, {
-  foreignKey: 'postId',
+  foreignKey: 'postId', // Define foreign key in the Comment model referencing the Post model
 });
 
 User.hasMany(Comment, {
-  foreignKey: 'userId',
+  foreignKey: 'userId', // Define foreign key in the Comment model referencing the User model
 });
 
 Post.hasMany(Comment, {
-  foreignKey: 'postId',
+  foreignKey: 'postId', // Define foreign key in the Comment model referencing the Post model
 });
 
+// Export
 module.exports = { User, Post, Comment };

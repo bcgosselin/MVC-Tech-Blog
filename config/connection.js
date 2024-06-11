@@ -1,8 +1,8 @@
-// Import the required modules
+// Import
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-// Initialize the sequelize variable
+// Initialize
 let sequelize;
 
 // Check if the JawsDB URL is available for deployment on Heroku
@@ -24,5 +24,5 @@ if (process.env.JAWSDB_URL) {
   );
 }
 
-// Export the sequelize instance for use in other files
+// Export
 module.exports = sequelize;
